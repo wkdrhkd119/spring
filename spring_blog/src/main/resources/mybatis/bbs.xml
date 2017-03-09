@@ -9,6 +9,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	SELECT * FROM
 	(
 	select
+	lag(bbsno,1) over (order by bbsno) pre_bbsno1,
+	bbsno,
+	lead(bbsno,1) over (order by bbsno) nex_bbsno1
+	from(
+		select bbsno
+		from bbs
+		order by bbsno desc
+		)
+	)
+	WHERE bbsno = #{bbsno}
+	</select>
+
+<!-- 	<select id="pageRead" parameterType="int" resultType="Map">
+	SELECT * FROM
+	(
+	select
 	lag(bbsno,1) over (order by bbsno) pre_no1,
 	bbsno,
 	lead(bbsno,1) over (order by bbsno) nex_no1
@@ -19,7 +35,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 )
 	)
 	WHERE bbsno = #{bbsno}
-	</select>
+	</select> -->
 
 
 

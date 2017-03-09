@@ -269,7 +269,7 @@ hr{
   <c:set var="noArr" value="${noArr}"/>
   <c:forEach var="i" begin="0" end="1">
   <c:choose>
-  	<c:when test="${noArr[i]==dto.bbsno}">
+  	<c:when test="${noArr[i]<dto.bbsno}">
   	  <a href="javascript:readGo('${noArr[i]}')">이전글</a>
   	</c:when>
 	<c:otherwise>
