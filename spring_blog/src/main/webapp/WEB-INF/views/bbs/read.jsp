@@ -270,7 +270,7 @@ hr{
   <c:forEach var="i" begin="0" end="1">
   <c:choose>
   	<c:when test="${noArr[i]<dto.bbsno}">
-  	  <a href="javascript:readGo('${noArr[i]}')">이전글</a>
+  	  <a href="javascript:readGo('${noArr[i]}')">이전글??</a>
   	</c:when>
 	<c:otherwise>
 	  <a href="javascript:readGo('${noArr[i]}')">다음글</a>
