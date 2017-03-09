@@ -9,9 +9,9 @@
 </c:otherwise>
 </c:choose>
 
-<c:set var="title">나의 여행 블로그</c:set>
+<c:set var="title"> 여행 블로그</c:set>
 <c:if test="${not empty sessionScope.id && sessionScope.grade=='A'}">
-	<c:set var="title">관리자 페이지입니다.</c:set>
+	<c:set var="title">페이지입니다.</c:set>
 </c:if>
 <html>
 <head>
