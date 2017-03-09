@@ -9,9 +9,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	SELECT * FROM
 	(
 	select
-	lag(bbsno,1) over (order by bbsno) pre_bbsno1,
+	lag(bbsno,1,bbsno) over (order by bbsno) pre_bbsno1),
 	bbsno,
-	lead(bbsno,1) over (order by bbsno) nex_bbsno1
+	lead(bbsno,1,bbsno) over (order by bbsno) nex_bbsno1)
 	from(
 		select bbsno
 		from bbs

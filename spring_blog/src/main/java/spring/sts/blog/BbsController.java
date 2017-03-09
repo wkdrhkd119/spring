@@ -235,14 +235,21 @@ public class BbsController {
 		Map pageRead = dao.pageRead(bbsno);
 		BigDecimal noArr[] = {
 		((BigDecimal)pageRead.get("PRE_BBSNO1")),
-		((BigDecimal)pageRead.get("BBSNO")),
+		//((BigDecimal)pageRead.get("BBSNO")),
 		((BigDecimal)pageRead.get("NEX_BBSNO1"))	
+		};
+		
+		String[] titles = {
+		((String)pageRead.get("PRE_TITLE1")),
+		//((String)map.get("TITLE")),
+		((String)pageRead.get("NEX_TITLE1"))
 		};
 		
 		model.addAttribute("rlist",list);
 		model.addAttribute("paging",paging);
 		model.addAttribute("nPage",nPage);
 		model.addAttribute("noArr",noArr);
+		model.addAttribute("titles",titles);
 		/* 댓글 관련 끝 */ 
 		
 		return "/bbs/read";
